@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>ETCH-A-SKETCH</h1>
+    </header>
+    <div id="content">
+
+
+        <div id="main">
+            <div id="menuContainer">
+                <div id="menu">
+                    <div id="nameHolder">
+                        <p>OPTIONS</p>
+                    </div>
+                    <div id="buttonHolder">
+                        <div>
+                            <button id="writeBtn" class="buttons">WRITE</button>
+                        </div>
+                        <div>
+                            <button id="eraseBtn" class="buttons">ERASE</button>
+                        </div>
+                        <div>
+                            <button id="clearBtn" class="buttons"> CLEAR</button>
+                        </div>
+                    </div>
+                    <div id="sliderContainer">
+                        <div id="sliderName">
+                            <p> RESOLUTION </p>
+                        </div>
+                        <div>
+                            <input type="range" id="boxResolution" min="10" value="16" max="64" step="1"
+                                name="Resolution">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="canvas">
+                <div id="gridContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p> &copy 2023. krekoster</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
