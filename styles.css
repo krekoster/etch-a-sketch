@@ -2,7 +2,6 @@
         --lightColor: #f7c04a ;
         --darkColor: #539165 ;
         --darkerColor: #3f497f ;
-        /* --boxBase: 64px; */
 }
 html {
     margin: 0px;
@@ -11,7 +10,6 @@ html {
 body {
     height: 100vh;
     font-size: 16px;
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: Roboto, sans-serif;
     margin: 0px;
     padding: 0px;
@@ -85,8 +83,7 @@ footer {
     flex-direction: column;
     flex: 0 1 auto;
     justify-content: space-evenly;
-    align-items: center;
-    
+    align-items: center;  
 }
 #canvas {
     width: 75%;
@@ -97,12 +94,11 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--lightColor)
-   
 }
 #gridContainer {
     height: 640px;
     width: 640px;
-    border: 5px solid var(--darkerColor);
+    border: 3px solid var(--darkerColor);
     box-shadow: 5px 5px 10px #765a23a1;
     display: flex;
     flex: 0 0 auto;
@@ -126,8 +122,6 @@ button {
     background-color: var(--lightColor);
 }
 #nameHolder > p {
-   
-    
     margin-left: auto;
     margin-right: auto;
     font-size: larger;

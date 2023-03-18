@@ -6,16 +6,17 @@ const writeBtn = document.getElementById("writeBtn");
 const eraseBtn = document.getElementById("eraseBtn");
 let globalMode = "write";
 let range = 16;
-let mouseDown = false;
 
 createBoxes();
 
+// after changing slider range, reset the container for sketching
 function getSliderValue() {
     grid.innerHTML = "";
     range = sliderRange.value;
     createBoxes();
 }
 
+// after clicking Clear button reset all parameters
 function resetParameters() {
     location.reload();
 }
@@ -26,20 +27,16 @@ grid.addEventListener("mouseenter", paintGrid);
 writeBtn.addEventListener("click", paintBox);
 eraseBtn.addEventListener("click", eraseBox);
 
-document.getElementById("gridContainer").onmousedown = () => (mouseDown = true);
-document.getElementById("gridContainer").onmouseup = () => (mouseDown = false);
-
 function paintBox() {
     globalMode = "write";
     paintGrid();
-    console.log(globalMode);
 }
 
 function eraseBox() {
     globalMode = "erase";
-    console.log(globalMode);
 }
 
+// create divs inside the container
 function createBoxes() {
     let base = (100 / range);
     base = base + "%";
@@ -52,15 +49,16 @@ function createBoxes() {
     }
 }
 
+// write or erase in particular div
 function paintGrid() {
     const box = document.getElementsByClassName("boxes");
     for (let i = 0; i < box.length; i++) {
-        if (globalMode === "write" && !mouseDown ) {
+        if (globalMode === "write") {
             box[i].addEventListener("mouseenter", () => {
                 box[i].style.backgroundColor = "#539165";
             })
         }
-        else if (!mouseDown) {
+        else {
             box[i].addEventListener("mouseenter", () => {
                 box[i].style.backgroundColor = "#f7c04a";
             })
@@ -69,21 +67,6 @@ function paintGrid() {
 }
 
 
-//----------------------------------------------------------------
-//-------------------mouseover testing snippet ------------------
-//---------------------------------------------------------------
-
-// const grid = document.getElementById("gridContainer");
-// function itsIn() {
-//     console.log("input");
-//     grid.style.backgroundColor = "red";
-// }
-// function itsAway() {
-//     console.log("goingout");
-//     grid.style.backgroundColor = "#f7c04a";
-// }
-// grid.addEventListener("mousedown", itsIn );
-// grid.addEventListener("mouseleave", itsAway);
 
 
 
